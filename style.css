@@ -1,4 +1,197 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+summary {
+  display: block;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+.area-catalog {
+  margin-bottom: 95px;
+}
+
+.catalog-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 48px;
+}
+.catalog-content__card {
+  background-color: #F8F8F8;
+}
+.catalog-content__title {
+  padding: 25px 28px 20px 18px;
+}
+.catalog-content__heading {
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 13px;
+}
+.catalog-content__text {
+  font-size: 14px;
+  font-weight: 300;
+  color: #5D5D5D;
+  margin-bottom: 18px;
+}
+.catalog-content__price {
+  font-size: 16px;
+  font-weight: 400;
+  color: #F16D7F;
+}
+
+.catalog-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.catalog-button__content {
+  border: 1px solid #F16D7F;
+  color: #F16D7F;
+  padding: 15px 39px;
+  background-color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.new-arrivals {
+  background-color: #F8F3F4;
+}
+.new-arrivals__content {
+  padding: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.new-arrivals__title {
+  font-size: 24px;
+  font-weight: 400;
+  color: #F16D7F;
+}
+.new-arrivals__links-gray {
+  font-size: 14px;
+  font-weight: 300;
+  color: #636363;
+}
+.new-arrivals__links-gray::after {
+  content: "/";
+  padding: 0 5px 0 5px;
+}
+.new-arrivals__links-pink {
+  font-size: 14px;
+  font-weight: 600;
+  color: #F16D7F;
+}
+
+.filter-sort {
+  height: 132px;
+  position: relative;
+}
+
+.filter {
+  width: 360px;
+  box-sizing: border-box;
+  top: 39px;
+  padding: 13px 16px 16px;
+  position: absolute;
+  cursor: pointer;
+}
+.filter[open] {
+  background-color: #fff;
+  box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+}
+.filter[open] .filter__summary {
+  color: #F16D7F;
+}
+.filter[open] path {
+  fill: #F16D7F;
+}
+.filter__summary {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17px;
+}
+.filter__item {
+  padding-top: 16px;
+  cursor: pointer;
+}
+.filter__item-heading {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  border-left: 5px solid #F16D7F;
+  border-bottom: 1px solid #EBEBEB;
+  padding: 8px 10px 10px 10px;
+}
+.filter__links-box {
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+.filter__links {
+  font-size: 14px;
+  font-weight: 400;
+  color: #6F6E6E;
+}
+.filter__item[open] .filter__item-heading {
+  color: #F16D7F;
+}
+.filter__links:hover {
+  content: "";
+  color: #F16D7F;
+}
+
+.sort {
+  position: absolute;
+  top: 51px;
+  left: 490px;
+  display: flex;
+  gap: 18px;
+}
+.sort__details {
+  position: relative;
+  cursor: pointer;
+}
+.sort__heading {
+  padding-right: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  color: #6F6E6E;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.sort__box {
+  background: #fff;
+  box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+  padding: 7px 30px 11px 9px;
+  gap: 6px;
+  position: absolute;
+  left: -9px;
+  top: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.sort__check {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #6F6E6E;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -20,8 +213,13 @@ img {
   margin: 0 auto;
 }
 
+.box-content {
+  overflow: hidden;
+}
+
 .header {
   background-color: #222222;
+  position: relative;
 }
 
 .nav {
@@ -49,6 +247,63 @@ img {
   background: none;
   border: hidden;
   cursor: pointer;
+}
+.nav__burger-check {
+  position: absolute;
+  visibility: hidden;
+  right: -999999999px;
+}
+
+#burger {
+  position: absolute;
+  left: -999999px;
+  visibility: hidden;
+}
+#burger:checked ~ .navigation {
+  right: 0px;
+}
+
+.navigation {
+  background: #fff;
+  box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+  width: 232px;
+  padding: 32px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 75px;
+  right: -232px;
+  transition: right 0.8s;
+}
+.navigation__title {
+  color: #000;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.navigation__box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 20px;
+}
+.navigation__heading {
+  font-size: 14px;
+  font-weight: 400;
+  color: #F16D7F;
+}
+.navigation__links-box {
+  display: flex;
+  flex-direction: column;
+  padding-left: 21px;
+  gap: 11px;
+}
+.navigation__links {
+  font-size: 14px;
+  font-weight: 400;
+  color: #6F6E6E;
+}
+.navigation__links:hover {
+  color: #F16D7F;
 }
 
 .main-content {
@@ -96,22 +351,22 @@ img {
   grid-column: 1/-1;
 }
 .card-content__women {
-  background-image: url(./img/features/woman.png);
+  background-image: url(./img/index/features/woman.png);
   width: 360px;
   height: 260px;
 }
 .card-content__men {
-  background-image: url(./img/features/man.png);
+  background-image: url(./img/index/features/man.png);
   width: 360px;
   height: 260px;
 }
 .card-content__kids {
-  background-image: url(./img/features/kid.png);
+  background-image: url(./img/index/features/kid.png);
   width: 360px;
   height: 260px;
 }
 .card-content__accesories {
-  background-image: url(./img/features/accesories.png);
+  background-image: url(./img/index/features/accesories.png);
   width: 1140px;
   height: 180px;
 }
@@ -251,7 +506,7 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(./img/subscribe/background.png);
+  background-image: url(./img/index/subscribe/background.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

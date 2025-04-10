@@ -1,4 +1,5 @@
 @import "vars";
+@import "catalog";
 
 * {
     margin: 0;
@@ -21,8 +22,13 @@ img {
     margin: 0 auto;
 }
 
+.box-content {
+    overflow: hidden;
+}
+
 .header {
     background-color: $backgroundDarkGray;
+    position: relative;
 }
 
 .nav {
@@ -53,6 +59,71 @@ img {
         background: none;
         border: hidden;
         cursor: pointer;
+    }
+
+    &__burger-check {
+        position: absolute;
+        visibility: hidden;
+        right: -999999999px;
+    }
+}
+
+#burger {
+    position: absolute;
+    left: -999999px;
+    visibility: hidden;
+
+    &:checked ~ .navigation {
+        right: 0px;
+    }
+}
+
+.navigation {
+    background: #fff;
+    box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+    width: 232px;
+    padding: 32px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 75px;
+    right: -232px;
+    transition: right 0.8s;
+
+    &__title {
+        color: #000;
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 4px;
+    }
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding-top: 20px;
+    }
+
+    &__heading {
+        font-size: 14px;
+        font-weight: 400;
+        color: $fontPink;
+    }
+
+    &__links-box {
+        display: flex;
+        flex-direction: column;
+        padding-left: 21px;
+        gap: 11px;
+    }
+
+    &__links {
+        font-size: 14px;
+        font-weight: 400;
+        color: #6F6E6E;
+
+        &:hover {
+            color: $fontPink;
+        }
     }
 }
 
@@ -108,25 +179,25 @@ img {
     }
 
     &__women {
-        background-image: url(./img/features/woman.png);
+        background-image: url(./img/index/features/woman.png);
         width: 360px;
         height: 260px;
     }
 
     &__men {
-        background-image: url(./img/features/man.png);
+        background-image: url(./img/index/features/man.png);
         width: 360px;
         height: 260px;
     }
 
     &__kids {
-        background-image: url(./img/features/kid.png);
+        background-image: url(./img/index/features/kid.png);
         width: 360px;
         height: 260px;
     }
 
     &__accesories {
-        background-image: url(./img/features/accesories.png);
+        background-image: url(./img/index/features/accesories.png);
         width: 1140px;
         height: 180px;
     }
@@ -282,7 +353,7 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(./img/subscribe/background.png);
+    background-image: url(./img/index/subscribe/background.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -507,6 +578,8 @@ img {
         padding: 0;
     }
 }
+
+
 
 @media (min-width: 375px) and (max-width: 768px) {
     .container {
